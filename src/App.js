@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Index from './Components/index.jsx';
+import Login from './Components/login';
+import Inicio from './Components/inicio';
+import PSO from './Components/pso';
+import BA from './Components/ba';
+import ACO from './Components/aco';
+import Compare from './Components/compare';
+import MCDM from './Components/mcdm';
+
+import About from './Components/about';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Index />
+      <div className="App bg-white">
+        <Routes>
+          <Route path = "/" element = {<Inicio />} />
+          <Route path = "/login" element = {<Login />} />
+          <Route path = "/About" element = {<About />} />
+          <Route path = "/PSO" element = {<PSO />} />
+          <Route path = "/BA" element = {<BA />} />
+          <Route path = "/ACO" element = {<ACO/>}/>
+          <Route path = '/Compare' element = {<Compare />} />
+          <Route path = '/MCDM' element = {<MCDM />} />
+
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
